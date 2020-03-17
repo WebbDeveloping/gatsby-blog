@@ -6,5 +6,20 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ['gatsby-plugin-typescript', 'gatsby-plugin-sass'],
+
+  siteMetadata: {
+    title: 'Gastby-Bootstrap',
+  },
+  plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-sass',
+    { resolve: `gatsby-transformer-remark` },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+  ],
 };
